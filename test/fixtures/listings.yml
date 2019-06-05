@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  space_name: MyString
+  venue_name: MyString
+  description: MyString
+  address_line_one: MyString
+  address_line_two: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  latitude: 1.5
+  longitude: 1.5
+  zipcode: MyString
+  timezone: MyString
+  seating: MyString
+  standing: MyString
+  boardrooms: MyString
+  classrooms: MyString
+  theater: MyString
+  u_shaped: MyString
+  cabaret: MyString
+  area_type: MyString
+  area_dimension: MyString
+  ceiling_type: MyString
+  ceiling_dimension: MyString
+  user: one
+
+two:
+  space_name: MyString
+  venue_name: MyString
+  description: MyString
+  address_line_one: MyString
+  address_line_two: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  latitude: 1.5
+  longitude: 1.5
+  zipcode: MyString
+  timezone: MyString
+  seating: MyString
+  standing: MyString
+  boardrooms: MyString
+  classrooms: MyString
+  theater: MyString
+  u_shaped: MyString
+  cabaret: MyString
+  area_type: MyString
+  area_dimension: MyString
+  ceiling_type: MyString
+  ceiling_dimension: MyString
+  user: two

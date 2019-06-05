@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<div class="container-fluid">
+  <!--Navbar -->
+  <nav class="mb-1 navbar navbar-expand-lg info-color pb-1">
+    <%=image_tag "logo (3).png"  ,style: "width:10%"%>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+      aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+      <ul class="navbar-nav ml-auto ">
+        <% if user_signed_in? %>
+          <%= link_to "Logout" , destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure you want to sign out?'} %>
+          <% else %>
+          <div class="list ml-2">
+            <%= link_to new_user_session_path, class: "mr-1 link-style", data: { toggle: 'modal', target: '#loginModal', remote: true } do %>
+              <i class="fas fa-plus nav-icons link-style mr-1"></i>List with Us
+            <% end %>
+          </div>
+          <div class="ml-3  list">
+            <%= link_to new_user_session_path, class: "mr-1 link-style", data: { toggle: 'modal', target: '#loginModal', remote: true } do %>
+              <i class="fa fa-arrow-right nav-icons mr-1 link-style"></i>Log In
+            <% end %> 
+          </div>
+          <div class="ml-3 list">
+            <%= link_to new_user_registration_path, class: "ml-1 link-style ",  data: { toggle: 'modal', target: '#registerModal', remote: true } do %>
+              <i class="fa fa-user nav-icons link-style "></i> Create account
+             <% end %> 
+          </div>  
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true"></div>
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true"></div>
+  <!--/.Navbar -->
+</div>
+<div class="section">  
+  <div class="jumbotron text-center" id="work">
+    <h1 class="display-4 ">  Hello, Welcome to HEADBOX</h1>
+    <p class="lead"> The Earn while learn programme provides opportunities to the students to earn while they are learning through the part-time jobs.</p>
+    <hr class="my-4">
+    <p>Exposes the students to the world of work before actual employment.</p>
+    
+  </div>
+</div>

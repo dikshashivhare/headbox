@@ -1,0 +1,40 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Sign In to Headbox</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div id="login_error"></div>
+      <%= form_for(:user, url: session_path(:user), remote: true) do |f| %>
+        <div class="form-group">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email Address", class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: 'form-control ' %>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <% if devise_mapping.rememberable? %>
+              <div class="form-group">
+                <%= f.check_box :keep_me_signed_in %>
+                <%= f.label :keep_me_signed_in %>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-6 forgot-password">
+           <%= link_to "Forgot your password?", new_user_password_path%> 
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "Log in", class: 'btn btn-dark btn-lg btn-block' %>
+        </div>
+      <% end %>
+         
+    </div>
+  </div>
+</div>

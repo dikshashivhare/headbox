@@ -1,0 +1,46 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Sign Up to Headbox</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div id="login_error"></div>
+      <%= form_for(:user, as: resource_name, url: registration_path(:user), remote: true) do |f| %>
+
+       <div class="form-group">
+         <%= f.email_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "First name", class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+         <%= f.email_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last name", class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.email_field :work_email_address, autofocus: true, autocomplete: "work_email_address", placeholder: "Work email address", class: 'form-control ' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: 'form-control ' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "Password confirm", class: 'form-control ' %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="form-group">
+            <%= f.check_box :I_accept_the_Headbox_Terms_and_Conditions_and_Privacy_Policy %>
+            <%= f.label :I_accept_the_Headbox_Terms_and_Conditions_and_Privacy_Policy %>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.submit "Sign up", class: 'btn btn-block btn-dark ' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
