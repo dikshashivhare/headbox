@@ -1,0 +1,5 @@
+<% if resource.save %>
+  window.location.href = '/';
+<% else %>
+$("#login_error").html("<%= escape_javascript (render partial: 'new') %>");
+<% end %>

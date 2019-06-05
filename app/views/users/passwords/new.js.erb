@@ -1,0 +1,5 @@
+// $("#loginModal").modal('hide');
+
+$("#passwordModal").html("<%= escape_javascript render(partial: 'new')%>");
+$("#passwordModal").modal('show');
+$("#loginModal").modal('hide');

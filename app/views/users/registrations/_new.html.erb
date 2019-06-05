@@ -10,37 +10,64 @@
       <div id="login_error"></div>
       <%= form_for(:user, as: resource_name, url: registration_path(:user), remote: true) do |f| %>
 
-       <div class="form-group">
-         <%= f.email_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "First name", class: 'form-control' %>
-        </div>
+      <div class="form-group">
+       <%= f.email_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "First name", class: 'form-control' %>
+     </div>
 
-        <div class="form-group">
-         <%= f.email_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last name", class: 'form-control' %>
-        </div>
+     <div class="form-group">
+       <%= f.email_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last name", class: 'form-control' %>
+     </div>
 
-        <div class="form-group">
-          <%= f.email_field :work_email_address, autofocus: true, autocomplete: "work_email_address", placeholder: "Work email address", class: 'form-control ' %>
-        </div>
-
-        <div class="form-group">
-          <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: 'form-control ' %>
-        </div>
-
-        <div class="form-group">
-          <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "Password confirm", class: 'form-control ' %>
-        </div>
-
-        <% if devise_mapping.rememberable? %>
-          <div class="form-group">
-            <%= f.check_box :I_accept_the_Headbox_Terms_and_Conditions_and_Privacy_Policy %>
-            <%= f.label :I_accept_the_Headbox_Terms_and_Conditions_and_Privacy_Policy %>
-          </div>
-        <% end %>
-
-        <div class="form-group">
-          <%= f.submit "Sign up", class: 'btn btn-block btn-dark ' %>
-        </div>
-      <% end %>
+     <div class="form-group">
+      <%= f.email_field :work_email_address, autofocus: true, autocomplete: "work_email_address", placeholder: "Work email address", class: 'form-control ' %>
     </div>
+
+    <div class="form-group">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: 'form-control ' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "Password confirm", class: 'form-control ' %>
+    </div>
+
+    <p>Subscribe to our newsletters and become part of the HeadBox community to benefit from the following:</p>
+
+    <div class="checkbox">
+     <%= f.check_box  :Brand_new_venues_on_HeadBox %>
+     <%= f.label :Brand_new_venues_on_HeadBox%>
+   </div>
+     <div class="checkbox">
+      <%= f.check_box  :Exclusive_HeadBox_event_invitations %>
+      <%= f.label :Exclusive_HeadBox_event_invitations%>
+     </div>
+    <div class="checkbox">
+      <%= f.check_box  :Special_offers_from_our_venues_and_suppliers %>
+      <%= f.label :Special_offers_from_our_venues_and_suppliers%>
+    </div>
+    <div class="checkbox">
+      <%= f.check_box  :Events_industry_news %>
+      <%= f.label :Events_industry_news%>
+    </div>
+
+   
+    <p>We will store your contact details under the terms:</p>
+    <% if devise_mapping.rememberable? %>
+
+    <%= f.check_box :I_accept_the_Headbox_Terms_and_Conditions_and_Privacy_Policy %>
+    <%= f.label :I_accept_the_Headbox_Terms_and_Conditions_and_Privacy_Policy %>
+
+    <% end %>
+    <div class="row">
+        <div class="col-md-6 link-style mt-2">
+           Already a member? <%= link_to "sign in", new_user_session_path , data: { toggle: 'modal', target: '#loginModal', remote: true }, class: 'link-style mt-2'  %>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.submit "Sign up", class: 'btn btn-block btn-dark ' %>
+          </div>
+        </div
+        >  
+    <% end %>
   </div>
+</div>
 </div>
