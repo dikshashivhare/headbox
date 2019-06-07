@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Space Name:</strong>
+  <%= @listing.space_name %>
+</p>
+
+<p>
+  <strong>Venue Name:</strong>
+  <%= @listing.venue_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

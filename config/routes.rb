@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
   root to: "home#index"
+  resources :listings
 
 end

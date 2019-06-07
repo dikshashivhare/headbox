@@ -3,8 +3,12 @@
 }
 #work
 {
-    background-image: url("/assets/flower.jpg");   
-}
+    background-image: url("/assets/full_screen.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}   
+
 .link-style{
 	color: #5e6166;
 }
@@ -20,4 +24,8 @@
 
 .forgot-password:hover{
 	color: #5e6166;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #cc3d55 !important;
 }
