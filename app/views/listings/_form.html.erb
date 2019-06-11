@@ -45,20 +45,25 @@
                     <%= form.label :address_line_2 %>
                     <%= form.text_field :address_line_2, id: :listing_address_line_2 ,class:"form-control"%>
                 </div>
-
-                <div class="form-group">
-                    <%= form.label :city %>
-                    <%= form.text_field :city, id: :listing_city ,class:"form-control"%>
-                </div>
-
-                <div class="form-group">
-                    <%= form.label :state %>
-                    <%= form.text_field :state, id: :listing_state ,class:"form-control"%>
-                </div>
-
-                <div class="form-group">
-                    <%= form.label :country %>
-                    <%= form.text_field :country, id: :listing_country ,class:"form-control"%>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <%= form.label :city %>
+                      <%= form.text_field :city, id: :listing_city ,class:"form-control"%>
+                    </div>
+                  </div>
+                 <div class="col-md-4">
+                    <div class="form-group">
+                      <%= form.label :state %>
+                      <%= form.text_field :state, id: :listing_state ,class:"form-control"%>
+                    </div>
+                 </div>
+                 <div class="col-md-4">
+                    <div class="form-group">
+                      <%= form.label :country %>
+                      <%= form.text_field :country, id: :listing_country ,class:"form-control"%>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -72,9 +77,88 @@
                 </div>
             </section>
 
-            <h2>Third Step</h2>
+            <h2>Category & Capacity</h2>
             <section>
-                
+              <h3>Layout & Capacity</h3>
+              <hr>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= form.label :seating %>
+                    <%= form.text_field :seating, id: :listing_seatings ,class:"form-control "%>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= form.label :standing %>
+                    <%= form.text_field :standing , id: :listing_standings  ,class:"form-control "%>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= form.label :boardrooms %>
+                    <%= form.text_field :boardrooms, id: :listing_boardrooms ,class:"form-control "%>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= form.label :classrooms %>
+                    <%= form.text_field :classrooms, id: :listing_classrooms ,class:"form-control "%>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= form.label :theatre %>
+                    <%= form.text_field :theatre, id: :listing_theatre ,class:"form-control "%>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= form.label :u_shaped %>
+                    <%= form.text_field :u_shaped, id: :listing_u_shaped ,class:"form-control "%>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= form.label :cabaret %>
+                    <%= form.text_field :cabaret, id: :listing_cabaret ,class:"form-control "%>
+                  </div>
+                </div>
+              </div>
+              <h3>Space Dimensions</h3>
+              <hr>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <%= form.label :area_type %>
+                    <%= form.text_field :area_type, id: :listing_area_type ,class:"form-control "%>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <%= form.label :area_dimension %>
+                    <%= form.text_field :area_dimension, id: :listing_area_dimension ,class:"form-control "%>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <%= form.label :ceiling_type %>
+                    <%= form.text_field :ceiling_type, id: :listing_ceiling_type ,class:"form-control "%>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group" >
+                    <%= form.label :ceiling_dimension %>
+                    <%= form.text_field :ceiling_dimension, id: :listing_ceiling_dimension ,class:"form-control"%>
+                  </div>
+                </div>
+              </div>
             </section>
 
             <h2>Forth Step</h2>

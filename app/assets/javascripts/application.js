@@ -13,13 +13,12 @@
 //= require rails-ujs
 //= require jquery3
 //= require popper
-//= require bootstrap
 //= require jquery-1.10.2.min
 //= require jquery-1.11.1.min
 //= require jquery-1.9.1.min
 //= require jquery.cookie-1.3.1
 //= require modernizr-2.6.2.min
 //= require jquery.steps
+//= require bootstrap
 //= require activestorage
-
 //= require turbolinks

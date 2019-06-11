@@ -9,17 +9,28 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
       <ul class="navbar-nav ml-auto ">
+
         <% if user_signed_in? %>
-         <div class="list ml-2">
+         <div class="list mr-4">
             <%= link_to new_listing_path, class: "mr-1 link-style"  do %>
               <i class="fas fa-plus nav-icons link-style mr-1"></i>List with Us
             <% end %>
           </div>
           <div class="list ml-2">
-            <%= link_to destroy_user_session_path, class: "mr-1 link-style", method: :delete, data: {confirm: 'Are you sure you want to sign out?'} do %>
-              <i class="fa fa-user nav-icons link-style "></i> <%= current_user.full_name %>
+            <!-- <%#= link_to destroy_user_session_path, class: "mr-1 link-style", method: :delete, data: {confirm: 'Are you sure you want to sign out?'} do %>
+              <i class="fa fa-user nav-icons link-style "></i> <%#= current_user.full_name %>
               
-            <% end %> 
+            <%# end %>  -->
+            <div class="dropdown mr-5">
+              <div class="border-0 drop-down-custom" data-toggle="dropdown">
+                <i class="fa fa-user nav-icons link-style mr-1"></i><%= current_user.full_name %><i class="fa fa-angle-down ml-2"></i>
+              </div>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" class="mr-1 link-style" href="#">List with us</a>
+                <a class="dropdown-item" class="mr-1 link-style" href="#">My Account</a>
+                <%= link_to "Logout", destroy_user_session_path, class: "mr-1 link-style dropdown-item", method: :delete %>
+              </div>
+            </div>
           </div>
         <% else %>
           <div class="list ml-2">

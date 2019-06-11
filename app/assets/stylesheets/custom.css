@@ -29,3 +29,14 @@
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: #cc3d55 !important;
 }
+.drop-down-custom{
+    cursor: pointer;
+}
+
+.input-mysize{
+    width: 28%;
+}
+
+.form-control{
+    height: 90%;
+}
