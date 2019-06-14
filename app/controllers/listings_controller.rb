@@ -5,7 +5,11 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    if params[:search].present?
+      @listings = Listing.near(params[:search], 50, :order => :distance)
+    else
+      @listings = Listing.all
+    end
   end
   
 
@@ -17,55 +21,66 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    @listing = Listing.new
+    session[:listing_params] ||= {}
+    @listing = Listing.new(session[:listing_params])
+    @listing.current_step = session[:listing_step]
   end
 
   # GET /listings/1/edit
   def edit
-    @listing = Listing.find(params[:id])
+    
   end
 
   # POST /listings
   # POST /listings.json
   def create
-    @listing = Listing.new(listing_params)
-
-    respond_to do |format|
-      if @listing.save
-        format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
-        format.json { render :show, status: :created, location: @listing }
+    session[:listing_params].deep_merge!(listing_params) 
+    @listing = Listing.new(session[:listing_params])
+    @listing.current_step = session[:listing_step]
+    if@listing.valid?
+      if params[:back_button]
+        @listing.previous_step
+      elsif @listing.last_step?
+        @listing.save if @listing.all_valid?
       else
-        format.html { render :new }
-        format.json { render json: @listing.errors, status: :unprocessable_entity }
+        @listing.next_step
       end
+      session[:listing_step] = @listing.current_step
+    end
+    if @listing.new_record?
+      render "new"
+    else
+      session[:listing_step] = session[:listing_params] = nil
+      flash[:notice] = "listing saved!"
+      redirect_to @listing
     end
   end
 
   # PATCH/PUT /listings/1
   # PATCH/PUT /listings/1.json
-  def update
-    @listing = Listing.new(listing_params)
-    respond_to do |format|
-      if @listing.update(listing_params)
-        format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
-        format.json { render :show, status: :ok, location: @listing }
-      else
-        format.html { render :edit }
-        format.json { render json: @listing.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   @listing = Listing.new(listing_params)
+  #   respond_to do |format|
+  #     if @listing.update(listing_params)
+  #       format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @listing }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @listing.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-  # DELETE /listings/1
-  # DELETE /listings/1.json
-  def destroy
-    @listing = Listing.find(params[:id])
-    @listing.destroy
-    respond_to do |format|
-      format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # # DELETE /listings/1
+  # # DELETE /listings/1.json
+  # def destroy
+  #   @listing = Listing.find(params[:id])
+  #   @listing.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

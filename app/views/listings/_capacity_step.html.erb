@@ -1,0 +1,82 @@
+<div class="form-container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :seating %>
+        <%= f.text_field :seating, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :standing %>
+        <%= f.text_field :standing, class: "form-control"%>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :boardrooms %>
+        <%= f.text_field :boardrooms, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :classrooms %>
+        <%= f.text_field :classrooms, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :theatre %>
+        <%= f.text_field :theatre, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :u_shaped %>
+        <%= f.text_field :u_shaped, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :cabaret %>
+        <%= f.text_field :cabaret, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <h2>Capacity</h2>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+
+      <div class="form-group">
+        <%= f.label :area_type %>
+        <%= f.text_field :area_type, class: "form-control" %>
+      </div>
+    </div>
+  
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :area_dimension %>
+        <%= f.text_field :area_dimension , class: "form-control"%>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :ceiling_type %>
+        <%= f.text_field :ceiling_type, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :ceiling_dimension %>
+        <%= f.text_field :ceiling_dimension, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id, class: "form-control" %>
+  </div>
+</div>  
+

@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Space Name:</strong>
+  <strong>Space name:</strong>
   <%= @listing.space_name %>
 </p>
 
 <p>
-  <strong>Venue Name:</strong>
+  <strong>Venue name:</strong>
   <%= @listing.venue_name %>
 </p>
 
@@ -15,6 +15,110 @@
   <%= @listing.description %>
 </p>
 
+<p>
+  <strong>Address line one:</strong>
+  <%= @listing.address_line_one %>
+</p>
+
+<p>
+  <strong>Address line two:</strong>
+  <%= @listing.address_line_two %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @listing.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @listing.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @listing.country %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @listing.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @listing.longitude %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @listing.zipcode %>
+</p>
+
+<p>
+  <strong>Timezone:</strong>
+  <%= @listing.timezone %>
+</p>
+
+<p>
+  <strong>Seating:</strong>
+  <%= @listing.seating %>
+</p>
+
+<p>
+  <strong>Standing:</strong>
+  <%= @listing.standing %>
+</p>
+
+<p>
+  <strong>Boardrooms:</strong>
+  <%= @listing.boardrooms %>
+</p>
+
+<p>
+  <strong>Classrooms:</strong>
+  <%= @listing.classrooms %>
+</p>
+
+<p>
+  <strong>Theater:</strong>
+  <%= @listing.theatre %>
+</p>
+
+<p>
+  <strong>U shaped:</strong>
+  <%= @listing.u_shaped %>
+</p>
+
+<p>
+  <strong>Cabaret:</strong>
+  <%= @listing.cabaret %>
+</p>
+
+<p>
+  <strong>Area type:</strong>
+  <%= @listing.area_type %>
+</p>
+
+<p>
+  <strong>Area dimension:</strong>
+  <%= @listing.area_dimension %>
+</p>
+
+<p>
+  <strong>Ceiling type:</strong>
+  <%= @listing.ceiling_type %>
+</p>
+
+<p>
+  <strong>Ceiling dimension:</strong>
+  <%= @listing.ceiling_dimension %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @listing.user_id %>
+</p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
