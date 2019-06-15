@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  geocoded_by :address_line_one, :latitude => :lat, :longitude => :lon            
+  geocoded_by :address_line_one          
    after_validation :geocode 
   
   belongs_to :user, optional:true

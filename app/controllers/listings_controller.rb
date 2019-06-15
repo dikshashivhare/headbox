@@ -36,6 +36,8 @@ class ListingsController < ApplicationController
   def create
     session[:listing_params].deep_merge!(listing_params) 
     @listing = Listing.new(session[:listing_params])
+     @listing.user_id = current_user.id
+     
     @listing.current_step = session[:listing_step]
     if@listing.valid?
       if params[:back_button]
